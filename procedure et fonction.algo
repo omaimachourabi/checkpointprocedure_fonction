@@ -1,0 +1,64 @@
+ALGORITHM vectoriel
+VAR
+   v1 : ARRAY_OF float[50];
+   v2 : ARRAY_OF float[50];
+   n,i : INTEGER;
+BEGIN
+     write("entrer vecteur 1");
+   read(v1);
+    write("entrer vecteur 2");
+   read(v2);
+
+   FOR i FROM 0 TO n-1 STEP 1  DO
+    FOR j FROM 0 TO n-1 STEP 1  DO
+       read(v1[i]);
+       read(v2[j]);
+       END_FOR
+        END_FOR
+        ps := procedure_vectoriel(n,v1,v2);
+        PS := fonction_vectoriel(v1,v2);
+END
+
+
+
+
+
+
+PROCEDURE procedure_vectoriel(n: INTEGER, VAR v1,v2 : ARRAY_OF float)
+VAR
+   i : INTEGER;
+   ps : float
+
+BEGIN
+
+   ps:=0.0;
+   FOR i FROM 0 TO n-1 STEP 1  DO
+    FOR j FROM 0 TO n-1 STEP 1  DO
+       ps := ps + (v1[i]*v2[j]);
+   END_FOR
+    END_FOR
+   IF (ps=0) THEN
+       write("le produit scalaire de v1 v2 est orthogonal ");
+  ELSE
+   write("le produit scalaire de v1 v2 est :", ps);
+    END_IF
+END
+
+
+
+
+FUNCTION fonction_vectoriel(v1,v2) : float
+VAR
+   v1 : ARRAY_OF float[50];
+   v2 : ARRAY_OF float[50];
+   i : INTEGER;
+   ps : float;
+BEGIN
+    ps :=0.0;
+    FOR i FROM 0 TO n-1 STEP 1  DO
+      FOR j FROM 0 TO n-1 STEP 1  DO
+       ps := ps + (v1[i]*v2[j]);
+   END_FOR
+   END_FOR
+    RETURN ps ;
+END
